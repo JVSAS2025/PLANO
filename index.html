@@ -1,1 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de Ocupación - Minibodegas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <header>
+        <h1>Control de Minibodegas - JVStorage</h1>
+        <p>Haz clic en una bodega para cambiar su estado (Libre / Ocupada / Reservada)</p>
+    </header>
+
+    <div class="container">
+        <!-- Panel de estadísticas rápidas -->
+        <div class="stats">
+            <span class="badge libre">Libres: <strong id="countLibres">0</strong></span>
+            <span class="badge ocupada">Ocupadas: <strong id="countOcupadas">0</strong></span>
+            <span class="badge reservada">Reservadas: <strong id="countReservadas">0</strong></span>
+        </div>
+
+        <!-- Contenedor del plano y las bodegas interactivas -->
+        <div class="plano-container">
+            <!-- REEMPLAZA 'plano.jpg' con el nombre de la imagen de tu plano en GitHub -->
+            <img src="plano.jpg" alt="Plano de Minibodegas" id="imagenPlano">
+            
+            <!-- Aquí se generan dinámicamente las bodegas sobre el plano -->
+            <div id="gridBodegas" class="grid-overlay"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
