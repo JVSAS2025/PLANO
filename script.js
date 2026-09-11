@@ -1,6 +1,6 @@
 const bodegasConfig = [
     // Fila Superior (B-101 a B-105)
-    { id: '121', top: '17%', left: '8%', width: '7%', height: '12%' },
+    { id: '121', top: '17%', left: '8%', width: '5%', height: '8%' },
     { id: 'B-102', top: '12%', left: '23%', width: '13%', height: '17%' },
     { id: 'B-103', top: '12%', left: '37%', width: '22%', height: '17%' },
     { id: 'B-104', top: '12%', left: '60%', width: '21%', height: '17%' },
