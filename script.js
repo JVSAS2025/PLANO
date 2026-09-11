@@ -29,11 +29,23 @@ const bodegasConfig = [
 ];
 
 const estadosPermitidos = ['libre', 'ocupada', 'reservada'];
-let bodegasData = JSON.parse(localStorage.getItem('jv_bodegas_estado')) || {};
+let bodegasData = {};
 
 const gridContainer = document.getElementById('gridBodegas');
 
-function inicializarPlano() {
+async function inicializarPlano() {
+    try {
+        // Carga los datos directamente desde el archivo estado-bodegas.json en el repositorio
+        const respuesta = await fetch('estado-bodegas.json?t=' + Date.now());
+        if (respuesta.ok) {
+            const datosRemotos = await respuesta.json();
+            bodegasData = datosRemotos;
+        }
+    } catch (error) {
+        console.warn("No se pudo cargar el archivo JSON remoto, usando respaldo local.", error);
+        bodegasData = JSON.parse(localStorage.getItem('jv_bodegas_estado')) || {};
+    }
+
     gridContainer.innerHTML = '';
 
     bodegasConfig.forEach(b => {
